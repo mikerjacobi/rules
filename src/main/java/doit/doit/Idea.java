@@ -6,12 +6,69 @@ package doit.doit;
 
 public class Idea implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Idea() {
-    }
+	@org.kie.api.definition.type.Label(value = "PK of idea")
+	private java.lang.String id;
+	@org.kie.api.definition.type.Label(value = "the idea itself")
+	private java.lang.String description;
+	@org.kie.api.definition.type.Label(value = "pain of failure")
+	private int risk;
+	@org.kie.api.definition.type.Label(value = "upside of success")
+	private int reward;
+	@org.kie.api.definition.type.Label(value = "odds of hitting the reward")
+	private java.lang.Double successChance;
 
+	public Idea() {
+	}
 
+	public java.lang.String getId() {
+		return this.id;
+	}
 
+	public void setId(java.lang.String id) {
+		this.id = id;
+	}
+
+	public java.lang.String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(java.lang.String description) {
+		this.description = description;
+	}
+
+	public int getRisk() {
+		return this.risk;
+	}
+
+	public void setRisk(int risk) {
+		this.risk = risk;
+	}
+
+	public int getReward() {
+		return this.reward;
+	}
+
+	public void setReward(int reward) {
+		this.reward = reward;
+	}
+
+	public java.lang.Double getSuccessChance() {
+		return this.successChance;
+	}
+
+	public void setSuccessChance(java.lang.Double successChance) {
+		this.successChance = successChance;
+	}
+
+	public Idea(java.lang.String id, java.lang.String description, int risk,
+			int reward, java.lang.Double successChance) {
+		this.id = id;
+		this.description = description;
+		this.risk = risk;
+		this.reward = reward;
+		this.successChance = successChance;
+	}
 
 }
