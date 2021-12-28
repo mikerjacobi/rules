@@ -6,7 +6,7 @@ rule "reweard is 1"
     when
         Idea(reward == 1)
     then
-        //shouldDoIt = true;
+        shouldDoIt = true;
         System.out.println("reward is 1!!");
 end
 
