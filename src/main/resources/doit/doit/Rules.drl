@@ -7,7 +7,8 @@ rule "reweard is 1"
         Idea(reward == 1)
     then
         shouldDoIt = true;
-        System.out.println("reward is 1, should do it: "+ shouldDoIt);
+        System.out.println("reward is 1!!");
+        System.out.println("should do it: "+ shouldDoIt);
 end
 
 rule "reweard is NOT 1"
@@ -15,6 +16,9 @@ rule "reweard is NOT 1"
         Idea($reward : reward)
         Idea($reward != 1)
     then
+        shouldDoIt = false;
         System.out.println("reward is NOT 1, it is: " + $reward);
+        System.out.println("should do it: "+ shouldDoIt);
+
 
 end
