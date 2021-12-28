@@ -16,8 +16,10 @@ rule "reweard is NOT 1"
     when
         Idea($reward : reward)
         Idea($reward != 1)
+        $i : Idea()
     then
         System.out.println("reward is NOT 1, it is: " + $reward);
+        $i.setShouldDoIt(false);
 
 
 end
