@@ -8,18 +8,19 @@ public class Idea implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "PK of Idea")
+	@org.kie.api.definition.type.Label("PK of Idea")
 	private int id;
-	@org.kie.api.definition.type.Label(value = "the idea itself")
+	@org.kie.api.definition.type.Label("the idea itself")
 	private java.lang.String description;
-	@org.kie.api.definition.type.Label(value = "the person who had the idea")
+	@org.kie.api.definition.type.Label("the person who had the idea")
 	private java.lang.String author;
-	@org.kie.api.definition.type.Label(value = "the value of the payoff from this idea")
+	@org.kie.api.definition.type.Label("the value of the payoff from this idea")
 	private int reward;
-	@org.kie.api.definition.type.Label(value = "the pain of failure")
+	@org.kie.api.definition.type.Label("the pain of failure")
 	private int risk;
-	@org.kie.api.definition.type.Label(value = "how likely this idea is to succeed")
-	private java.lang.Double successLiklihood;
+	@org.kie.api.definition.type.Description(value = "value of [0 - 1] of the idea succeeding")
+	@org.kie.api.definition.type.Label(value = "chance idea will succeed")
+	private java.lang.Double successChance;
 
 	public Idea() {
 	}
@@ -64,22 +65,22 @@ public class Idea implements java.io.Serializable {
 		this.risk = risk;
 	}
 
-	public java.lang.Double getSuccessLiklihood() {
-		return this.successLiklihood;
+	public java.lang.Double getSuccessChance() {
+		return this.successChance;
 	}
 
-	public void setSuccessLiklihood(java.lang.Double successLiklihood) {
-		this.successLiklihood = successLiklihood;
+	public void setSuccessChance(java.lang.Double successChance) {
+		this.successChance = successChance;
 	}
 
 	public Idea(int id, java.lang.String description, java.lang.String author,
-			int reward, int risk, java.lang.Double successLiklihood) {
+			int reward, int risk, java.lang.Double successChance) {
 		this.id = id;
 		this.description = description;
 		this.author = author;
 		this.reward = reward;
 		this.risk = risk;
-		this.successLiklihood = successLiklihood;
+		this.successChance = successChance;
 	}
 
 }
