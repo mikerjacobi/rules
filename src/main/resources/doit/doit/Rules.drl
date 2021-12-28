@@ -6,4 +6,5 @@ rule "test"
     when
         Idea(reward == 1)
     then
+        System.out.Println("test rule executed");
 end
