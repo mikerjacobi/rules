@@ -5,7 +5,7 @@ import doit.doit.Idea;
 rule "reweard is 1"
     when
         Idea(reward == 1)
-        $i : Idea()
+        $i : Idea( )
 
     then
         $i.setShouldDoIt(true);
