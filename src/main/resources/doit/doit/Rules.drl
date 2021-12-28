@@ -6,5 +6,5 @@ rule "test"
     when
         //Idea(reward == 1)
     then
-        System.out.println("test rule executed");
+        System.out.println("test rule executed!!");
 end
