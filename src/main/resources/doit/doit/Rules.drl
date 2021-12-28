@@ -7,7 +7,7 @@ rule "reweard is 1"
         i : Idea()
         Idea(reward == 1)
     then
-        $i.shouldDoIt = false;
+        i.shouldDoIt = true;
         System.out.println("reward is 1!!");
 end
 
