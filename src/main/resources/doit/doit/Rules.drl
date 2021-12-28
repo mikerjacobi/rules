@@ -1,2 +1,9 @@
 package doit.doit;
 
+import doit.doit.Idea;
+
+rule "test"
+    when
+        SeatDesignation(reward == 1)
+    then
+end
