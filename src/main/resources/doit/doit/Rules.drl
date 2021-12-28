@@ -1,6 +1,7 @@
 package doit.doit;
 
 import doit.doit.Idea;
+import doit.doit.shouldDoIt;
 
 
 rule "reweard is 1"
