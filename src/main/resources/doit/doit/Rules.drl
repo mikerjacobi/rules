@@ -2,7 +2,7 @@ package doit.doit;
 
 import doit.doit.Idea;
 
-rule "reweard is 1"
+rule "reward is 1"
     when
         Idea(reward == 1)
         $i : Idea( )
@@ -12,7 +12,7 @@ rule "reweard is 1"
         System.out.println("reward is 1!!");
 end
 
-rule "reweard is NOT 1"
+rule "reward is NOT 1"
     when
         Idea($reward : reward)
         Idea($reward != 1)
