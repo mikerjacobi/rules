@@ -1,2 +1,12 @@
 package com.doit.do_it;
+import com.doit.do_it.Idea;
 
+global Response resp;
+
+
+rule "do coinflips"
+    when
+        Idea(successLiklihood > 0.5f)
+    then
+        myResponse.setDoIt(true);
+end
