@@ -2,10 +2,12 @@ package doit.doit;
 
 import doit.doit.Idea;
 
+
 rule "reweard is 1"
     when
         Idea(reward == 1)
     then
+        shouldDoIt = true;
         System.out.println("reward is 1!!");
 end
 
@@ -15,4 +17,6 @@ rule "reweard is NOT 1"
         Idea($reward != 1)
     then
         System.out.println("reward is NOT 1, it is: " + $reward);
+        shouldDoIt = false;
+
 end
