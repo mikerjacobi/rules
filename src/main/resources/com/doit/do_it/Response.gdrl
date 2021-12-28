@@ -1,3 +1,0 @@
-package com.doit.do_it;
-
-global java.lang.Boolean DoIt;
