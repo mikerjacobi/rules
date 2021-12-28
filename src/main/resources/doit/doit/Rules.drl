@@ -14,5 +14,5 @@ rule "reweard is NOT 1"
         Idea($reward : reward)
         Idea($reward != 1)
     then
-        System.out.println("reward is !!" + $reward);
+        System.out.println("reward is NOT 1, it is: " + $reward);
 end
