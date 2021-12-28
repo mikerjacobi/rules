@@ -1,7 +1,7 @@
-package doit.do_it;
+package doit.doit;
 
 
-import com.doit.do_it.Idea;
+import doit.doit.Idea;
 
 
 
