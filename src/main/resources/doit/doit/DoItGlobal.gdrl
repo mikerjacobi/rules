@@ -1,2 +1,3 @@
 package doit.doit;
 
+global java.lang.Boolean shouldDoIt;
