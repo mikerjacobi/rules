@@ -8,5 +8,5 @@ rule "do coinflips"
     when
         Idea(successLiklihood > 0.5f)
     then
-        myResponse.setDoIt(true);
+        resp.setDoIt(true);
 end
