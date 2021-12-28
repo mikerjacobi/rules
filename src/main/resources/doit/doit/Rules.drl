@@ -7,7 +7,7 @@ rule "reweard is 1"
         i : Idea()
         Idea(reward == 1)
     then
-        i.shouldDoIt = true;
+        i.setShouldDoIt(true);
         System.out.println("reward is 1!!");
 end
 
