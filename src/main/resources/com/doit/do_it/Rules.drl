@@ -1,7 +1,7 @@
 package com.doit.do_it;
 import com.doit.do_it.Idea;
 
-global Response resp;
+global Response resp = new Response();
 
 
 rule "do coinflips"
