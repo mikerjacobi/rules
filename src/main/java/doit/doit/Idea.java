@@ -8,16 +8,19 @@ public class Idea implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "PK of idea")
+	@org.kie.api.definition.type.Label("PK of idea")
 	private java.lang.String id;
-	@org.kie.api.definition.type.Label(value = "the idea itself")
+	@org.kie.api.definition.type.Label("the idea itself")
 	private java.lang.String description;
-	@org.kie.api.definition.type.Label(value = "pain of failure")
+	@org.kie.api.definition.type.Label("pain of failure")
 	private int risk;
-	@org.kie.api.definition.type.Label(value = "upside of success")
+	@org.kie.api.definition.type.Label("upside of success")
 	private int reward;
-	@org.kie.api.definition.type.Label(value = "odds of hitting the reward")
+	@org.kie.api.definition.type.Label("odds of hitting the reward")
 	private java.lang.Double successChance;
+
+	@org.kie.api.definition.type.Label(value = "do it or not")
+	private java.lang.Boolean shouldDoIt;
 
 	public Idea() {
 	}
@@ -62,13 +65,23 @@ public class Idea implements java.io.Serializable {
 		this.successChance = successChance;
 	}
 
+	public java.lang.Boolean getShouldDoIt() {
+		return this.shouldDoIt;
+	}
+
+	public void setShouldDoIt(java.lang.Boolean shouldDoIt) {
+		this.shouldDoIt = shouldDoIt;
+	}
+
 	public Idea(java.lang.String id, java.lang.String description, int risk,
-			int reward, java.lang.Double successChance) {
+			int reward, java.lang.Double successChance,
+			java.lang.Boolean shouldDoIt) {
 		this.id = id;
 		this.description = description;
 		this.risk = risk;
 		this.reward = reward;
 		this.successChance = successChance;
+		this.shouldDoIt = shouldDoIt;
 	}
 
 }
