@@ -13,14 +13,17 @@ public class Idea implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("the idea itself")
 	private java.lang.String description;
 	@org.kie.api.definition.type.Label("pain of failure")
-	private int risk;
+	private Float risk;
 	@org.kie.api.definition.type.Label("upside of success")
-	private int reward;
+	private Float reward;
 	@org.kie.api.definition.type.Label("odds of hitting the reward")
-	private java.lang.Double successChance;
+	private Float successChance;
 
-	@org.kie.api.definition.type.Label(value = "do it or not")
+	@org.kie.api.definition.type.Label("do it or not")
 	private java.lang.Boolean shouldDoIt;
+
+	@org.kie.api.definition.type.Label(value = "cost to attempt this idea")
+	private java.lang.Float cost;
 
 	public Idea() {
 	}
@@ -41,30 +44,6 @@ public class Idea implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public int getRisk() {
-		return this.risk;
-	}
-
-	public void setRisk(int risk) {
-		this.risk = risk;
-	}
-
-	public int getReward() {
-		return this.reward;
-	}
-
-	public void setReward(int reward) {
-		this.reward = reward;
-	}
-
-	public java.lang.Double getSuccessChance() {
-		return this.successChance;
-	}
-
-	public void setSuccessChance(java.lang.Double successChance) {
-		this.successChance = successChance;
-	}
-
 	public java.lang.Boolean getShouldDoIt() {
 		return this.shouldDoIt;
 	}
@@ -73,15 +52,49 @@ public class Idea implements java.io.Serializable {
 		this.shouldDoIt = shouldDoIt;
 	}
 
-	public Idea(java.lang.String id, java.lang.String description, int risk,
-			int reward, java.lang.Double successChance,
-			java.lang.Boolean shouldDoIt) {
+	public java.lang.Float getRisk() {
+		return this.risk;
+	}
+
+	public void setRisk(java.lang.Float risk) {
+		this.risk = risk;
+	}
+
+	public java.lang.Float getReward() {
+		return this.reward;
+	}
+
+	public void setReward(java.lang.Float reward) {
+		this.reward = reward;
+	}
+
+	public java.lang.Float getSuccessChance() {
+		return this.successChance;
+	}
+
+	public void setSuccessChance(java.lang.Float successChance) {
+		this.successChance = successChance;
+	}
+
+	public java.lang.Float getCost() {
+		return this.cost;
+	}
+
+	public void setCost(java.lang.Float cost) {
+		this.cost = cost;
+	}
+
+	public Idea(java.lang.String id, java.lang.String description,
+			java.lang.Float risk, java.lang.Float reward,
+			java.lang.Float successChance, java.lang.Boolean shouldDoIt,
+			java.lang.Float cost) {
 		this.id = id;
 		this.description = description;
 		this.risk = risk;
 		this.reward = reward;
 		this.successChance = successChance;
 		this.shouldDoIt = shouldDoIt;
+		this.cost = cost;
 	}
 
 }
