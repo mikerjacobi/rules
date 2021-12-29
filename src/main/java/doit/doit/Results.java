@@ -6,12 +6,24 @@ package doit.doit;
 
 public class Results implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Results() {
-    }
+	@org.kie.api.definition.type.Label(value = "the score")
+	private int score;
 
+	public Results() {
+	}
 
+	public int getScore() {
+		return this.score;
+	}
 
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public Results(int score) {
+		this.score = score;
+	}
 
 }
