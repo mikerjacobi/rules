@@ -12,7 +12,7 @@ end
 
 rule "reward is NOT 1"
     when
-        Idea($reward : reward != 1)
+        $i : Idea($reward : reward != 1)
     then
         System.out.println("reward is NOT 1, it is: " + $reward);
 
