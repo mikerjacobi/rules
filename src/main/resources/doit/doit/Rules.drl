@@ -4,9 +4,7 @@ import doit.doit.Idea;
 
 rule "reward is 1"
     when
-        Idea(reward == 1)
-        $i : Idea( )
-
+        $i : Idea(reward == 1)
     then
         $i.setShouldDoIt(true);
         System.out.println("reward is 1!!");
