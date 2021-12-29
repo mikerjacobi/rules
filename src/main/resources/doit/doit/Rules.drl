@@ -1,7 +1,7 @@
 package doit.doit;
 
 import doit.doit.Idea;
-global Results results;
+global Results results = new Results(0);
 
 
 rule "reward is 1"
