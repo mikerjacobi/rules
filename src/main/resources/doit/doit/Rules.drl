@@ -1,20 +1,11 @@
 package doit.doit;
 
 import doit.doit.Idea;
-global Results results;
-
-rule "Initialize"
-salience 100
-when
-then
-       kcontext.getKieRuntime().setGlobal("results", new Results(0));
-end   
 
 rule "reward is 1"
     when
         $i : Idea(reward == 1)
     then
-        results.setScore(5);
         $i.setShouldDoIt(true);
         System.out.println("reward is 1!!");
 end
