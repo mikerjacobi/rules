@@ -18,14 +18,14 @@ public class Idea implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("do it or not")
 	private java.lang.Boolean shouldDoIt;
 
-	@org.kie.api.definition.type.Label("cost to attempt this idea")
-	private java.lang.Float cost;
-
-	@org.kie.api.definition.type.Label(value = "downside of failure")
+	@org.kie.api.definition.type.Label("downside of failure")
 	private java.lang.Float downsideOfFailure;
 
-	@org.kie.api.definition.type.Label(value = "upside of success")
+	@org.kie.api.definition.type.Label("upside of success")
 	private java.lang.Float upsideOfSuccess;
+
+	@org.kie.api.definition.type.Label(value = "cost to attempt this idea")
+	private java.lang.Float costToAttempt;
 
 	public Idea() {
 	}
@@ -62,14 +62,6 @@ public class Idea implements java.io.Serializable {
 		this.successChance = successChance;
 	}
 
-	public java.lang.Float getCost() {
-		return this.cost;
-	}
-
-	public void setCost(java.lang.Float cost) {
-		this.cost = cost;
-	}
-
 	public java.lang.Float getDownsideOfFailure() {
 		return this.downsideOfFailure;
 	}
@@ -86,17 +78,25 @@ public class Idea implements java.io.Serializable {
 		this.upsideOfSuccess = upsideOfSuccess;
 	}
 
+	public java.lang.Float getCostToAttempt() {
+		return this.costToAttempt;
+	}
+
+	public void setCostToAttempt(java.lang.Float costToAttempt) {
+		this.costToAttempt = costToAttempt;
+	}
+
 	public Idea(java.lang.String id, java.lang.String description,
 			java.lang.Float successChance, java.lang.Boolean shouldDoIt,
-			java.lang.Float cost, java.lang.Float downsideOfFailure,
-			java.lang.Float upsideOfSuccess) {
+			java.lang.Float downsideOfFailure, java.lang.Float upsideOfSuccess,
+			java.lang.Float costToAttempt) {
 		this.id = id;
 		this.description = description;
 		this.successChance = successChance;
 		this.shouldDoIt = shouldDoIt;
-		this.cost = cost;
 		this.downsideOfFailure = downsideOfFailure;
 		this.upsideOfSuccess = upsideOfSuccess;
+		this.costToAttempt = costToAttempt;
 	}
 
 }
