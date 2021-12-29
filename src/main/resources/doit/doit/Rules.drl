@@ -2,15 +2,15 @@ package doit.doit;
 
 import doit.doit.Idea;
 
-rule "reward is 1"
+rule "1: idea is worth it"
     when
-        $i : Idea(reward == 1)
+        $i : Idea(successChance > 0.5f)
     then
         $i.setShouldDoIt(true);
-        System.out.println("reward is 1!!");
+        System.out.println("executed rule 1");
 end
 
-rule "reward is NOT 1"
+rule "reward is not worth it"
     when
         $i : Idea($reward : reward != 1)
     then
