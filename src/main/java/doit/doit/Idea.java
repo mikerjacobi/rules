@@ -12,18 +12,20 @@ public class Idea implements java.io.Serializable {
 	private java.lang.String id;
 	@org.kie.api.definition.type.Label("the idea itself")
 	private java.lang.String description;
-	@org.kie.api.definition.type.Label("pain of failure")
-	private Float risk;
-	@org.kie.api.definition.type.Label("upside of success")
-	private Float reward;
 	@org.kie.api.definition.type.Label("odds of hitting the reward")
 	private Float successChance;
 
 	@org.kie.api.definition.type.Label("do it or not")
 	private java.lang.Boolean shouldDoIt;
 
-	@org.kie.api.definition.type.Label(value = "cost to attempt this idea")
+	@org.kie.api.definition.type.Label("cost to attempt this idea")
 	private java.lang.Float cost;
+
+	@org.kie.api.definition.type.Label(value = "downside of failure")
+	private java.lang.Float downsideOfFailure;
+
+	@org.kie.api.definition.type.Label(value = "upside of success")
+	private java.lang.Float upsideOfSuccess;
 
 	public Idea() {
 	}
@@ -52,22 +54,6 @@ public class Idea implements java.io.Serializable {
 		this.shouldDoIt = shouldDoIt;
 	}
 
-	public java.lang.Float getRisk() {
-		return this.risk;
-	}
-
-	public void setRisk(java.lang.Float risk) {
-		this.risk = risk;
-	}
-
-	public java.lang.Float getReward() {
-		return this.reward;
-	}
-
-	public void setReward(java.lang.Float reward) {
-		this.reward = reward;
-	}
-
 	public java.lang.Float getSuccessChance() {
 		return this.successChance;
 	}
@@ -84,17 +70,33 @@ public class Idea implements java.io.Serializable {
 		this.cost = cost;
 	}
 
+	public java.lang.Float getDownsideOfFailure() {
+		return this.downsideOfFailure;
+	}
+
+	public void setDownsideOfFailure(java.lang.Float downsideOfFailure) {
+		this.downsideOfFailure = downsideOfFailure;
+	}
+
+	public java.lang.Float getUpsideOfSuccess() {
+		return this.upsideOfSuccess;
+	}
+
+	public void setUpsideOfSuccess(java.lang.Float upsideOfSuccess) {
+		this.upsideOfSuccess = upsideOfSuccess;
+	}
+
 	public Idea(java.lang.String id, java.lang.String description,
-			java.lang.Float risk, java.lang.Float reward,
 			java.lang.Float successChance, java.lang.Boolean shouldDoIt,
-			java.lang.Float cost) {
+			java.lang.Float cost, java.lang.Float downsideOfFailure,
+			java.lang.Float upsideOfSuccess) {
 		this.id = id;
 		this.description = description;
-		this.risk = risk;
-		this.reward = reward;
 		this.successChance = successChance;
 		this.shouldDoIt = shouldDoIt;
 		this.cost = cost;
+		this.downsideOfFailure = downsideOfFailure;
+		this.upsideOfSuccess = upsideOfSuccess;
 	}
 
 }
