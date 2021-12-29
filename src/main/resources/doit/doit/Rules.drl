@@ -14,6 +14,7 @@ rule "reward is NOT 1"
     when
         $i : Idea($reward : reward != 1)
     then
+        $i.setShouldDoIt(false);
         System.out.println("reward is NOT 1, it is: " + $reward);
 
 
