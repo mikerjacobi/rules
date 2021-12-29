@@ -12,7 +12,7 @@ end
 
 rule "reward is not worth it"
     when
-        $i : Idea($reward : reward != 1)
+        $i : Idea(successChance <= 0.5f)
     then
         $i.setShouldDoIt(false);
         System.out.println("reward is NOT 1, it is: " + $reward);
