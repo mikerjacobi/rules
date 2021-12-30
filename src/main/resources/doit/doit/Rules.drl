@@ -4,18 +4,19 @@ import doit.doit.Idea;
 
 rule "1: idea is worth it"
     when
-        $i : Idea(successChance > 0.5f)
+        $i : Idea(successChance > 0.5f, $chance: successChance)
     then
         $i.setShouldDoIt(true);
-        System.out.println("executed rule 1");
+        System.out.println("idea is worth it, success chance is: " + $chance);
+
 end
 
-rule "reward is not worth it"
+rule "idea is not worth it"
     when
-        $i : Idea(successChance <= 0.5f, $reward: upsideOfSuccess)
+        $i : Idea(successChance <= 0.5f, $chance: successChance)
     then
         $i.setShouldDoIt(false);
-        System.out.println("reward is NOT 1, it is: " + $reward);
+        System.out.println("idea is NOT worth it, success chance is: " + $chance);
 
 
 end

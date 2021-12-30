@@ -11,6 +11,7 @@ public class Idea implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("PK of idea")
 	private java.lang.String id;
 	@org.kie.api.definition.type.Label("the idea itself")
+	@org.kie.api.definition.type.Description("any idea at all...")
 	private java.lang.String description;
 	@org.kie.api.definition.type.Label("odds of hitting the reward")
 	private Float successChance;
@@ -24,7 +25,7 @@ public class Idea implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("upside of success")
 	private java.lang.Float upsideOfSuccess;
 
-	@org.kie.api.definition.type.Label(value = "cost to attempt this idea")
+	@org.kie.api.definition.type.Label("cost to attempt this idea")
 	private java.lang.Float costToAttempt;
 
 	public Idea() {

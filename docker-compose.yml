@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  drools-wb:
+    container_name: drools-wb
+    image: jboss/drools-workbench-showcase:latest
+    environment:
+      JAVA_OPTS: "-Dorg.uberfire.nio.git.ssh.host=0.0.0.0 -Dorg.uberfire.nio.git.dir=/rules -Xms256m -Xmx2048m -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8"
+      # JAVA_OPTS: "-Dorg.uberfire.nio.git.ssh.host=0.0.0.0 -Xms256m -Xmx2048m -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8"
+    volumes:
+      - "./:/rules:rw"
+    ports:
+      - 8001:8001
+      - 28080:8080
+
+  kie-server:
+    container_name: kie-server
+    image: jboss/kie-server-showcase:latest
+    links:
+      - drools-wb:kie_wb
+    ports:
+      - 8080:8080
+    depends_on:
+      - drools-wb
+    environment:
+      KIE_WB_PORT: tcp://kie_wb:8001
+      KIE_WB_PORT_8001_TCP: tcp://kie_wb:8001
+      KIE_WB_PORT_8001_TCP_ADDR: kie_wb
+      KIE_WB_PORT_8080_TCP: tcp://kie_wb:8080
+      KIE_WB_PORT_8080_TCP_ADDR: kie_wb
+      KIE_WB_ENV_KIE_CONTEXT_PATH: business-central
