@@ -2,21 +2,37 @@ package doit.doit;
 
 import doit.doit.Idea;
 
-rule "1: idea is worth it"
+rule "start process"
+    when
+    then
+        kcontext.getKieRuntime().startProcess("doit.doit.Process");
+end
+
+rule "small idea is worth it"
+    ruleflow-group "SmallIdeaRules"
+    when
+        $i : Idea(successChance > 0.1f, $chance: successChance)
+    then
+        $i.setShouldDoIt(true);
+        System.out.println("idea is worth it, success chance is: " + $chance);
+end
+
+
+rule "big idea is worth it"
+    ruleflow-group "BigIdeaRules"
     when
         $i : Idea(successChance > 0.5f, $chance: successChance)
     then
         $i.setShouldDoIt(true);
         System.out.println("idea is worth it, success chance is: " + $chance);
-
 end
 
-rule "idea is not worth it"
+
+rule "big idea is not worth it"
+    ruleflow-group "BigIdeaRules"
     when
         $i : Idea(successChance <= 0.5f, $chance: successChance)
     then
         $i.setShouldDoIt(false);
         System.out.println("idea is NOT worth it, success chance is: " + $chance);
-
-
 end

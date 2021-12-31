@@ -28,6 +28,9 @@ public class Idea implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("cost to attempt this idea")
 	private java.lang.Float costToAttempt;
 
+	@org.kie.api.definition.type.Label(value = "the type of idea this is")
+	private java.lang.String ideaType;
+
 	public Idea() {
 	}
 
@@ -87,10 +90,18 @@ public class Idea implements java.io.Serializable {
 		this.costToAttempt = costToAttempt;
 	}
 
+	public java.lang.String getIdeaType() {
+		return this.ideaType;
+	}
+
+	public void setIdeaType(java.lang.String ideaType) {
+		this.ideaType = ideaType;
+	}
+
 	public Idea(java.lang.String id, java.lang.String description,
 			java.lang.Float successChance, java.lang.Boolean shouldDoIt,
 			java.lang.Float downsideOfFailure, java.lang.Float upsideOfSuccess,
-			java.lang.Float costToAttempt) {
+			java.lang.Float costToAttempt, java.lang.String ideaType) {
 		this.id = id;
 		this.description = description;
 		this.successChance = successChance;
@@ -98,6 +109,7 @@ public class Idea implements java.io.Serializable {
 		this.downsideOfFailure = downsideOfFailure;
 		this.upsideOfSuccess = upsideOfSuccess;
 		this.costToAttempt = costToAttempt;
+		this.ideaType = ideaType;
 	}
 
 }
